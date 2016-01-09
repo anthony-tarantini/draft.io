@@ -1,4 +1,4 @@
-package com.example;
+package com.draftio.gateway;
 
 import org.junit.Before;
 import org.junit.Test;

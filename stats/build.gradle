@@ -1,5 +1,5 @@
 jar {
-    baseName = 'magic-drafter-stats'
+    baseName = 'stats'
     version =  '0.0.1'
 }
 
@@ -7,5 +7,4 @@ build.dependsOn clean
 
 dependencies {
     compile project(':domain')
-    compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 }

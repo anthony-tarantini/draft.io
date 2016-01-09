@@ -1,10 +1,9 @@
 jar {
-    baseName = 'magic-drafter-domain'
+    baseName = 'domain'
     version =  '0.0.1'
 }
 
 build.dependsOn clean
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
 }
