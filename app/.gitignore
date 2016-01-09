@@ -1,2 +1,4 @@
-/app.iml
-/build
+/*.iml
+/.idea
+/.gradle
+/.DS_Store

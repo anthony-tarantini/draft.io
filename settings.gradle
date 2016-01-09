@@ -1,3 +1,6 @@
-rootProject.name = 'magicdraft'
+rootProject.name = 'draftio'
 
 include 'app'
+include 'stats'
+include 'domain'
+include 'gateway'

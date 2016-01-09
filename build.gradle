@@ -37,7 +37,7 @@ subprojects {
 
 import org.ajoberstar.grgit.*
 
-ext.repo = Grgit.open()
+ext.repo = Grgit.open(creds: new Credentials(username: "$System.env.GIT_USERNAME", password: "$System.env.GIT_PASSWORD"))
 
 version = "1.0.0-${repo.head().abbreviatedId}"
 
@@ -61,5 +61,7 @@ task push << {repo.push()}
 task deliver(type: DefaultTask)
 rebase.dependsOn unstaged
 push.dependsOn rebase
-push.dependsOn ':app:build'
+push.dependsOn ':domain:test'
+push.dependsOn ':app:test'
+push.dependsOn ':domain:test'
 deliver.dependsOn push
