@@ -63,5 +63,5 @@ task push << {repo.push()}
 task deliver(type: DefaultTask)
 rebase.dependsOn unstaged
 push.dependsOn rebase
-push.dependsOn test
+push.dependsOn build
 deliver.dependsOn push
