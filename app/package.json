@@ -1,23 +1,82 @@
 {
-  "name": "react-es6-browserify",
-  "version": "0.0.5",
-  "dependencies": {},
-  "devDependencies": {
-    "browserify": "^3.46.0",
-    "connect": "^2.15.0",
-    "es6ify": "^1.6.0",
-    "gulp": "^3.6.2",
-    "gulp-browserify": "^0.5.0",
-    "gulp-livereload": "^1.3.1",
-    "gulp-rename": "^1.2.0",
-    "reactify": "^0.13.1",
-    "vinyl-source-stream": "^0.1.1",
-    "envify": "^1.2.1",
-    "react": "^0.10.0",
-    "watchify": "^0.8.3",
-    "gulp-util": "^2.2.14"
+  "name": "Draft.io",
+  "version": "0.0.1",
+  "description": "Draft.io",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anthony-tarantini/draft.io"
   },
-  "engines": {
-    "node": ">=0.10.0"
+  "scripts": {
+    "test": "jest",
+    "watch": "gulp watch",
+    "build": "gulp build",
+    "deploy": "gulp deploy"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": [
+      "es6",
+      "js",
+      "jsx"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6",
+      "jsx"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules"
+    ],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules"
+    ]
+  },
+  "author": "Anthony Tarantini",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anthony-tarantini/draft.io/issues"
+  },
+  "homepage": "https://github.com/anthony-tarantini/draft.io",
+  "dependencies": {
+    "history": "^1.17.0",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-router": "^1.0.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.0.0",
+    "babel": "^6.3.13",
+    "babel-core": "^6.3.17",
+    "babel-jest": "^6.0.1",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browser-sync": "^2.9.1",
+    "browserify": "^12.0.1",
+    "cssnano": "^3.0.0",
+    "eslint-plugin-react": "^3.3.2",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-html-replace": "^1.5.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-postcss": "^6.0.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.4.0",
+    "imagemin-pngquant": "^4.2.0",
+    "jest-cli": "^0.8.2",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-extend": "^1.0.0",
+    "postcss-simple-vars": "^1.0.0",
+    "react-addons-test-utils": "^0.14.3",
+    "rimraf": "^2.4.3",
+    "run-sequence": "^1.1.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.4.0"
   }
 }
