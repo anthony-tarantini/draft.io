@@ -1,1 +1,7 @@
 apply plugin: 'gulp'
+
+task test(type: DefaultTask)
+task build(type: DefaultTask)
+
+test.dependsOn npm_test
+build.dependsOn gulp_build
