@@ -1,13 +1,16 @@
 import React from 'react';
+import Sets from './Sets';
 
 class App extends React.Component {
+
     render() {
         return (
             <div>
                 <header>
-                    <h1>Draft.io</h1>
+                    <h1 className="application-name">Draft.io</h1>
                 </header>
-                <section>Draft.io</section>
+                <Sets />
+                <button class="draft-button">Draft!</button>
             </div>
         )
     }
