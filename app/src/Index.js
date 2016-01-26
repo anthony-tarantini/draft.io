@@ -6,7 +6,8 @@ import App from './components/App';
 window.React = React;
 
 render(
-    (<Router>
-        <Route path="/" component={App}/>
-    </Router>), document.getElementById('content')
+    <Router>
+        <Route path="/" component={App} />
+    </Router>,
+    document.getElementById('content')
 );

@@ -28,10 +28,10 @@ const paths = {
     srcCss: 'src/**/*.css',
     srcImg: 'src/images/**',
     srcLint: ['src/**/*.js', 'test/**/*.js'],
-    dist: 'dist',
-    distJs: 'dist/js',
-    distImg: 'dist/images',
-    distDeploy: './dist/**/*'
+    build: 'build',
+    buildJs: 'build/js',
+    buildImg: 'build/images',
+    buildDeploy: './build/**/*'
 };
 
 const customOpts = {
@@ -42,7 +42,7 @@ const customOpts = {
 const opts = Object.assign({}, watchify.args, customOpts);
 
 gulp.task('clean', cb => {
-    rimraf('dist', cb);
+    rimraf('build', cb);
 });
 
 gulp.task('browserSync', () => {
@@ -63,7 +63,7 @@ gulp.task('watchify', () => {
             .pipe(buffer())
             .pipe(sourcemaps.init({loadMaps: true}))
             .pipe(sourcemaps.write('.'))
-            .pipe(gulp.dest(paths.distJs))
+            .pipe(gulp.dest(paths.buildJs))
             .pipe(reload({stream: true}));
     }
 
@@ -81,7 +81,7 @@ gulp.task('browserify', () => {
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(uglify())
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(paths.distJs));
+        .pipe(gulp.dest(paths.buildJs));
 });
 
 gulp.task('styles', () => {
@@ -89,14 +89,14 @@ gulp.task('styles', () => {
         .pipe(sourcemaps.init())
         .pipe(postcss([vars, extend, nested, autoprefixer, cssnano]))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(paths.dist))
+        .pipe(gulp.dest(paths.build))
         .pipe(reload({stream: true}));
 });
 
 gulp.task('htmlReplace', () => {
     gulp.src('index.html')
         .pipe(htmlReplace({css: 'styles/main.css', js: 'js/app.js'}))
-        .pipe(gulp.dest(paths.dist));
+        .pipe(gulp.dest(paths.build));
 });
 
 gulp.task('images', () => {
@@ -106,7 +106,7 @@ gulp.task('images', () => {
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         }))
-        .pipe(gulp.dest(paths.distImg));
+        .pipe(gulp.dest(paths.buildImg));
 });
 
 gulp.task('lint', () => {
@@ -121,7 +121,7 @@ gulp.task('watchTask', () => {
 });
 
 gulp.task('deploy', function () {
-    return gulp.src(paths.distDeploy)
+    return gulp.src(paths.buildDeploy)
         .pipe(ghPages());
 });
 

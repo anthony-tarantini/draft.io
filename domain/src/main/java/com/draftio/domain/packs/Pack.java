@@ -1,16 +1,14 @@
-package com.draftio.domain.sets;
+package com.draftio.domain.packs;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
-import java.util.List;
-
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class SetsResponse {
+public class Pack {
     @NonNull
-    private List<String> sets;
+    private int id;
 }

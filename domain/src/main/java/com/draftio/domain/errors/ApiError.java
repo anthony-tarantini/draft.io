@@ -1,16 +1,14 @@
-package com.draftio.domain.sets;
+package com.draftio.domain.errors;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
-import java.util.List;
-
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class SetsResponse {
+public class ApiError {
     @NonNull
-    private List<String> sets;
+    private String message;
 }

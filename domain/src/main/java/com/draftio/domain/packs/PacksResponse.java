@@ -1,4 +1,4 @@
-package com.draftio.domain.sets;
+package com.draftio.domain.packs;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class SetsResponse {
+public class PacksResponse {
     @NonNull
-    private List<String> sets;
+    private List<Pack> packs;
 }

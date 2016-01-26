@@ -10,7 +10,7 @@ class App extends React.Component {
                     <h1 className="application-name">Draft.io</h1>
                 </header>
                 <Sets />
-                <button class="draft-button">Draft!</button>
+                <button className="draft-button">Draft!</button>
             </div>
         )
     }
