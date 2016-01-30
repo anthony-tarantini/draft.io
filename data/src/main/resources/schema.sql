@@ -21,13 +21,17 @@ CREATE TABLE draftio_data.set (
   composition_id INT REFERENCES draftio_data.pack_composition (id)
 );
 
-DROP TABLE IF EXISTS draftio_data.created_packs;
+DROP TABLE IF EXISTS draftio_data.created_pack;
 
-CREATE TABLE draftio_data.created_packs (
-  id        SERIAL PRIMARY KEY,
-  set       INT REFERENCES draftio_data.set (id),
-  rares     INT,
-  uncommons INT,
-  commons   INT,
-  lands     INT
+CREATE TABLE draftio_data.created_pack (
+  id     SERIAL PRIMARY KEY,
+  set_id INT REFERENCES draftio_data.set (id)
 );
+
+DROP TABLE IF EXISTS draftio_data.card;
+
+CREATE TABLE draftio_data.card (
+  id     SERIAL PRIMARY KEY,
+  name   VARCHAR,
+  rarity VARCHAR
+)
