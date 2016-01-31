@@ -3,8 +3,6 @@ jar {
     version =  '0.0.1'
 }
 
-build.dependsOn clean
-
 dependencies {
     compile project(':domain')
 }

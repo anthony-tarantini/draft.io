@@ -3,8 +3,6 @@ jar {
     version =  '0.0.1'
 }
 
-build.dependsOn clean
-
 dependencies {
     compile 'org.projectlombok:lombok:1.16.6'
     compile 'com.fasterxml.jackson.core:jackson-core:2.6.4'
