@@ -20,8 +20,8 @@ class Sets extends React.Component {
 
     renderOptions() {
         let options = [];
-        this.state.sets.forEach((setName, i) => {
-            options.push(<option key={i} value={setName}>{setName}</option>)
+        this.state.sets.forEach((set, i) => {
+            options.push(<option key={i} value={set.name}>{set.name}</option>)
         });
         return options;
     }

@@ -2,6 +2,7 @@ package com.draftio.data.packs;
 
 import com.draftio.domain.errors.ApiError;
 import com.draftio.domain.packs.PacksResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 class PacksController {
     private PacksService service;
 
+    @Autowired
     public PacksController(final PacksService service) {
         this.service = service;
     }
@@ -29,6 +31,6 @@ class PacksController {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public ApiError handleException(final PacksException exception) {
-        return new ApiError("I'm an error");
+        return new ApiError(exception.getMessage());
     }
 }

@@ -1,10 +1,10 @@
-DROP SCHEMA IF EXISTS draftio_data CASCADE;
+DROP SCHEMA IF EXISTS card_data CASCADE;
 
-CREATE SCHEMA draftio_data;
+CREATE SCHEMA card_data;
 
-DROP TABLE IF EXISTS draftio_data.pack_composition;
+DROP TABLE IF EXISTS card_data.pack_composition;
 
-CREATE TABLE draftio_data.pack_composition (
+CREATE TABLE card_data.pack_composition (
   id        SERIAL PRIMARY KEY,
   rares     INT,
   uncommons INT,
@@ -12,26 +12,27 @@ CREATE TABLE draftio_data.pack_composition (
   lands     INT
 );
 
-DROP TABLE IF EXISTS draftio_data.set;
+DROP TABLE IF EXISTS card_data.set;
 
-CREATE TABLE draftio_data.set (
+CREATE TABLE card_data.set (
   id             SERIAL PRIMARY KEY,
   name           VARCHAR,
-  code           CHAR(3),
-  composition_id INT REFERENCES draftio_data.pack_composition (id)
+  code           CHAR(3) NOT NULL UNIQUE,
+  composition_id INT REFERENCES card_data.pack_composition (id)
 );
 
-DROP TABLE IF EXISTS draftio_data.created_pack;
+DROP TABLE IF EXISTS card_data.created_pack;
 
-CREATE TABLE draftio_data.created_pack (
+CREATE TABLE card_data.created_pack (
   id     SERIAL PRIMARY KEY,
-  set_id INT REFERENCES draftio_data.set (id)
+  set_id INT REFERENCES card_data.set (id)
 );
 
-DROP TABLE IF EXISTS draftio_data.card;
+DROP TABLE IF EXISTS card_data.card;
 
-CREATE TABLE draftio_data.card (
+CREATE TABLE card_data.card (
   id     SERIAL PRIMARY KEY,
   name   VARCHAR,
-  rarity VARCHAR
+  rarity VARCHAR,
+  set_code CHAR(3) REFERENCES card_data.set (code)
 )

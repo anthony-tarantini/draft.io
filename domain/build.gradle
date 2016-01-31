@@ -6,5 +6,7 @@ jar {
 build.dependsOn clean
 
 dependencies {
-    compile "org.projectlombok:lombok:1.16.6"
+    compile 'org.projectlombok:lombok:1.16.6'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.6.4'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.7.0'
 }

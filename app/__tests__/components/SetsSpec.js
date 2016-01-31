@@ -32,7 +32,7 @@ describe('Sets', () => {
     it('should set options to be data received from sets endpoint', () => {
         Client.doFetch.mockReturnValueOnce({
             then: (cb) => {
-                cb({sets: ["setone", "settwo"]})
+                cb({sets: [{name: "setone", code:"ST1"}, {name:"settwo", code:"ST2"}]})
             }
         });
         instance.componentDidMount();

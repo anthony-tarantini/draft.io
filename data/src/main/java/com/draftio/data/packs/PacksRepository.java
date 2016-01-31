@@ -2,6 +2,8 @@ package com.draftio.data.packs;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-interface PacksRepository extends JpaRepository<PackEntity, Long> {
+import java.util.List;
 
+interface PacksRepository extends JpaRepository<PackEntity, Long> {
+    List<PackEntity> findTop3BySetCode(final String setCode);
 }

@@ -1,7 +1,7 @@
 module.exports = {
     doFetch (path, method, data) {
         return new Promise(function (resolve, reject) {
-            var url = `http://localhost:8080/${path}`;
+            var url = `http://localhost:8090/${path}`;
             var opts = {
                 headers: {
                     'Content-Type': 'application/json',

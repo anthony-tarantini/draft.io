@@ -14,7 +14,6 @@ buildscript {
 configure(subprojects.findAll {it.name != 'app'}) {
     apply plugin: 'java'
     apply plugin: 'idea'
-    apply plugin: 'spring-boot'
 
     repositories {
         jcenter()
@@ -24,9 +23,14 @@ configure(subprojects.findAll {it.name != 'app'}) {
     }
 
     sourceCompatibility = 1.8
+}
+
+configure(subprojects.findAll {it.name != 'app' && it.name != 'domain'}) {
+    apply plugin: 'spring-boot'
 
     dependencies {
         compile('org.springframework.boot:spring-boot-starter-web')
+        compile('com.fasterxml.jackson.module:jackson-module-parameter-names:2.6.1')
 
         testCompile('org.springframework.boot:spring-boot-starter-test'){
             exclude module: 'hamcrest-core'

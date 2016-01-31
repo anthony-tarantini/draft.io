@@ -1,4 +1,4 @@
-package com.draftio.stats;
+package com.draftio.data;
 
 import org.junit.Before;
 import org.junit.Test;

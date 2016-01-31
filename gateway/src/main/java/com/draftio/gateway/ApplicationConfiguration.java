@@ -8,13 +8,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
 public class ApplicationConfiguration {
-
     @Bean
-    WebMvcConfigurer configurer() {
+    WebMvcConfigurer cors() {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedMethods("GET", "POST", "DELETE", "HEAD");
+                registry.addMapping("/**").allowedMethods("GET", "PUT", "POST", "DELETE", "HEAD");
             }
         };
     }
